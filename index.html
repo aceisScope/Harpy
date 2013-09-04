@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,28 +16,39 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1>Harpy</h1>
-        <p>Notify users when a new version of your iOS app is available, and prompt them with the App Store link.</p>
-        <p class="view"><a href="https://github.com/ArtSabintsev/Harpy">View the Project on GitHub <small>ArtSabintsev/Harpy</small></a></p>
+        <h1 class="header">Harpy</h1>
+        <p class="header">Notify users when a new version of your iOS app is available, and prompt them with the App Store link.</p>
+
         <ul>
-          <li><a href="https://github.com/ArtSabintsev/Harpy/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/ArtSabintsev/Harpy/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/ArtSabintsev/Harpy">View On <strong>GitHub</strong></a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ArtSabintsev/Harpy/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ArtSabintsev/Harpy/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ArtSabintsev/Harpy">View On GitHub</a></li>
         </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ArtSabintsev">ArtSabintsev</a></p>
+
+
       </header>
       <section>
         <h1>
 <a name="harpy" class="anchor" href="#harpy"><span class="octicon octicon-link"></span></a>Harpy</h1>
 
 <h3>
-<a name="notify-users-when-a-new-version-of-your-ios-app-is-available-and-prompt-them-with-the-app-store-link" class="anchor" href="#notify-users-when-a-new-version-of-your-ios-app-is-available-and-prompt-them-with-the-app-store-link"><span class="octicon octicon-link"></span></a>Notify users when a new version of your iOS app is available, and prompt them with the App Store link.</h3>
+<a name="notify-users-when-a-new-version-of-your-app-is-available-and-prompt-them-with-the-app-store-link" class="anchor" href="#notify-users-when-a-new-version-of-your-app-is-available-and-prompt-them-with-the-app-store-link"><span class="octicon octicon-link"></span></a>Notify users when a new version of your app is available, and prompt them with the App Store link.</h3>
 
 <hr><h3>
-<a name="about-current-release-v237" class="anchor" href="#about-current-release-v237"><span class="octicon octicon-link"></span></a>About (current release: v2.3.7)</h3>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h3>
 
-<p><strong>Harpy</strong> is a utility that checks a user's currently installed version of your iOS application against the version that is currently available in the AppStore. If a new version is available, an instance of UIAlertView is presented to the user informing them of the newer version, and giving them the option to update the application.</p>
+<p><strong>Harpy</strong> is a utility that checks a user's currently installed version of your iOS application against the version that is currently available in the App Store. If a new version is available, an instance of UIAlertView is presented to the user informing them of the newer version, and giving them the option to update the application.</p>
 
 <h3>
+<a name="changelog-v238" class="anchor" href="#changelog-v238"><span class="octicon octicon-link"></span></a>Changelog (v2.3.8)</h3>
+
+<ul>
+<li>Added <em>optional</em> ability to change the name of that will be displayed in the UIAlertView instance.</li>
+<li>Minor stylistic tweaks to codebase.</li>
+<li>Updated README.</li>
+</ul><h3>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h3>
 
 <ul>
@@ -85,6 +95,9 @@
 
     <span class="c1">// Set the App ID for your app</span>
     <span class="p">[[</span><span class="n">Harpy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">setAppID</span><span class="o">:</span><span class="s">@"&lt;app_id&gt;"</span><span class="p">];</span>
+
+    <span class="c1">// (Optional) Set the App Name for your app</span>
+    <span class="p">[[</span><span class="n">Harpy</span> <span class="n">sharedInstance</span><span class="p">]</span> <span class="n">setAppName</span><span class="o">:</span><span class="s">@"&lt;app_name&gt;"</span><span class="p">];</span>
 
     <span class="cm">/* (Optional) Set the Alert Type for your app </span>
 <span class="cm">     By default, the Singleton is initialized to HarpyAlertTypeOption */</span>
@@ -145,36 +158,92 @@
 </pre></div>
 
 <h3>
-<a name="important-note-on-appstore-submissions" class="anchor" href="#important-note-on-appstore-submissions"><span class="octicon octicon-link"></span></a>Important Note on AppStore Submissions</h3>
+<a name="important-note-on-app-store-submissions" class="anchor" href="#important-note-on-app-store-submissions"><span class="octicon octicon-link"></span></a>Important Note on App Store Submissions</h3>
 
 <ul>
-<li>The AppStore reviewer will <strong>not</strong> see the alert. </li>
+<li>The App Store reviewer will <strong>not</strong> see the alert. </li>
 </ul><h3>
 <a name="project-contributors" class="anchor" href="#project-contributors"><span class="octicon octicon-link"></span></a>Project Contributors</h3>
 
 <ul>
 <li>
-<a href="http://www.github.com/getaaron">Aaron Brager</a> in v1.5.0</li>
+<strong>v1.0.1</strong>
+
+<ul>
+<li><a href="https://github.com/pius">Pius Uzamere</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/ercillagorka">Ercillagorka</a> in v2.3.4</li>
+<strong>v1.5.0</strong>
+
+<ul>
+<li><a href="http://www.github.com/getaaron">Aaron Brager</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/dexcell0">Erick</a> in v2.3.3</li>
+<strong>v2.0.0</strong>
+
+<ul>
+<li><a href="https://github.com/claaslange">Claas Lange</a></li>
+<li><a href="https://github.com/joshuatbrown">Josh T. Brown</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/claaslange">Claas Lange</a> in v2.0.0</li>
+<strong>v2.3.0</strong>
+
+<ul>
+<li><a href="https://github.com/kgn">David Keegan</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/kgn">David Keegan</a> in v2.3.0</li>
+<strong>v2.3.1</strong>
+
+<ul>
+<li><a href="https://github.com/RuiAAPeres">Rui Perese</a></li>
+</ul>
+</li>
 <li>
-<a href="http://github,com/jamiely">Jamie Ly</a> in v2.3.6</li>
+<strong>v2.3.2</strong>
+
+<ul>
+<li><a href="https://github.com/markrickert">Mark Rickert</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/joshuatbrown">Josh T. Brown</a> in v2.0.0</li>
+<strong>v2.3.3</strong>
+
+<ul>
+<li><a href="https://github.com/dexcell0">Erick</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/markrickert">Mark Rickert</a> in v2.3.2</li>
+<strong>v2.3.4</strong>
+
+<ul>
+<li><a href="https://github.com/ercillagorka">Ercillagorka</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/pius">Pius Uzamere</a> in v1.0.1</li>
+<strong>v2.3.5</strong>
+
+<ul>
+<li><a href="https://github.com/trentw">TrentW</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/RuiAAPeres">Rui Perese</a> in v2.3.1</li>
+<strong>v2.3.6</strong>
+
+<ul>
+<li><a href="http://github,com/jamiely">Jamie Ly</a></li>
+</ul>
+</li>
 <li>
-<a href="https://github.com/trentw">TrentW</a> in v2.3.5</li>
+<strong>v2.3.8</strong>
+
+<ul>
+<li><a href="https://github.com/thomashempel">Thomas Hempel</a></li>
+</ul>
+</li>
 </ul><h3>
 <a name="created-and-maintained-by" class="anchor" href="#created-and-maintained-by"><span class="octicon octicon-link"></span></a>Created and maintained by</h3>
 
@@ -193,13 +262,12 @@ Copyright (c) 2012-2013 Arthur Ariel Sabintsev</p>
 
 <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
       </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-    <footer>
-      <p>Project maintained by <a href="https://github.com/ArtSabintsev">ArtSabintsev</a></p>
-      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-    </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>

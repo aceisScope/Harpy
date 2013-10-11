@@ -40,12 +40,10 @@
 <p><strong>Harpy</strong> is a utility that checks a user's currently installed version of your iOS application against the version that is currently available in the App Store. If a new version is available, an instance of UIAlertView is presented to the user informing them of the newer version, and giving them the option to update the application.</p>
 
 <h3>
-<a name="changelog-v238" class="anchor" href="#changelog-v238"><span class="octicon octicon-link"></span></a>Changelog (v2.3.8)</h3>
+<a name="changelog-v239" class="anchor" href="#changelog-v239"><span class="octicon octicon-link"></span></a>Changelog (v2.3.9)</h3>
 
 <ul>
-<li>Added <em>optional</em> ability to change the name of that will be displayed in the UIAlertView instance.</li>
-<li>Minor stylistic tweaks to codebase.</li>
-<li>Updated README.</li>
+<li>Fixed warning by replacing <code>kCFCalendarUnitDay</code> with <code>NSCalendarUnitDay</code>.</li>
 </ul><h3>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h3>
 
@@ -85,7 +83,7 @@
 <code>checkVersionWeekly</code> in <code>applicationDidBecomeActive:</code>.</li>
 </ul>
 </li>
-</ol><div class="highlight"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
+</ol><div class="highlight highlight-obj-c"><pre><span class="k">-</span> <span class="p">(</span><span class="kt">BOOL</span><span class="p">)</span><span class="nf">application:</span><span class="p">(</span><span class="n">UIApplication</span> <span class="o">*</span><span class="p">)</span><span class="nv">application</span> <span class="nf">didFinishLaunchingWithOptions:</span><span class="p">(</span><span class="n">NSDictionary</span> <span class="o">*</span><span class="p">)</span><span class="nv">launchOptions</span>
 <span class="p">{</span>
 
     <span class="c1">// Present Window before calling Harpy</span>
@@ -140,7 +138,7 @@
 
 <p>If you'd like to handle or track the end-user's behavior, four delegate methods have been made available to you:</p>
 
-<div class="highlight"><pre>
+<div class="highlight highlight-obj-c"><pre>
     <span class="c1">// User presented with update dialog</span>
     <span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">harpyDidShowUpdateDialog</span><span class="p">;</span>
 

@@ -83,4 +83,11 @@ typedef NS_ENUM(NSUInteger, HarpyAlertType)
  */
 - (void)checkVersionWeekly;
 
+/**
+ Perform check for new version of your app only after app launches for cetain amount of times.
+ Do not use this method if you need to check version the first time the app islaunched.
+ Use this method only in - application: didFinishLaunchingWithOptions:
+ */
+- (void)checkVersionAfterAssignedLaunchTimes;
+
 @end

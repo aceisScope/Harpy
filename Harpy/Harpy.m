@@ -22,6 +22,9 @@
 #define kAppStoreLinkUniversal              @"http://itunes.apple.com/lookup?id=%@"
 #define kAppStoreLinkCountrySpecific        @"http://itunes.apple.com/lookup?id=%@&country=%@"
 
+/// Set up how many launche times before checking version
+#define kHarpyAssginedLaunchtimes 4
+
 @interface Harpy() <UIAlertViewDelegate>
 
 @property (strong, nonatomic) NSDate *lastVersionCheckPerformedOnDate;
@@ -156,6 +159,32 @@
     if ([self numberOfDaysElapsedBetweenILastVersionCheckDate] > 7) {
         [self checkVersion];
     }
+}
+
+- (void)checkVersionAfterAssignedLaunchTimes
+{
+    static NSString *launchTime = @"launchTimeForVersionCheck";
+    if ([[NSUserDefaults standardUserDefaults]objectForKey:launchTime] == nil)
+    {
+        [[NSUserDefaults standardUserDefaults]setObject:@(1) forKey:launchTime];
+        [[NSUserDefaults standardUserDefaults]synchronize];
+    }
+    else
+    {
+        int time = [[[NSUserDefaults standardUserDefaults] objectForKey:launchTime] intValue];
+        time++;
+        
+        if (time < kHarpyAssginedLaunchtimes)
+        {
+            [[NSUserDefaults standardUserDefaults]setObject:@(time) forKey:launchTime];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+        }
+        else
+        {
+            [self checkVersion];
+        }
+    }
+    
 }
 
 #pragma mark - Private Methods
